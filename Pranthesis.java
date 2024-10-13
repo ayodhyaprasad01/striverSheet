@@ -2,6 +2,7 @@ import java.util.Stack;
 
 public class Pranthesis {
     public static void main(String[] args) {
+        
         String str = "(([}))";
         Stack<Character> st = new Stack<>();
         int count=0;
