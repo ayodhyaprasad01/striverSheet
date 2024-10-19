@@ -19,12 +19,13 @@ public class Solution1 {
         // System.out.println(Solution1.countSetBits(5));
         int i, j;
 
-i = 100;
+        i = 100;
 
-j = 300;
+        j = 300;
 
-while(++i < --j);
+        while (++i < --j)
+            ;
 
-System.out.println(i);
+        System.out.println(i);
     }
 }
