@@ -4,7 +4,7 @@ public class StringRotation {
         if (s1.length() != s2.length()) {
             return false;
         }
-        String d=s1+1;
+        String d = s1 + s1;
         return d.contains(s2);
     }
 
