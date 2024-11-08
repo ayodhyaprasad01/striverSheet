@@ -3,7 +3,7 @@ class A {
         System.out.println("M1 from class A");
     }
 
-    public void m2() {
+    void m2() {
         m1();
     }
 }
@@ -14,10 +14,10 @@ class B extends A {
     }
 }
 
-public class Strings {
+class Strings {
     public static void main(String[] args) {
         B obj = new B();
-        b.m2();
+        // B.m2();
 
     }
 }
