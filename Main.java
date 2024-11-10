@@ -36,5 +36,19 @@ class Main {
         int[] arr = { 3, 2, 4, 1, 10, 30, 40, 20 };
         int n = arr.length;
         printOrder(arr, n);
+
+        // System.out.println("hello".substring(0, 4));
+        // System.out.println();
+        //
+
+        String originalString = "Hello, World! World!";
+        String substringToReplace = "World";
+        String replacement = "Java";
+        String modifiedString = originalString.replace(substringToReplace, replacement);
+        System.out.println(modifiedString);
+        System.out.println();
+
+        String b = originalString.replaceAll(substringToReplace, replacement);
+        System.out.println(b);
     }
 }
