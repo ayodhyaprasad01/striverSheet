@@ -1,13 +1,40 @@
-class Foo {
-    class Bar {
-    }
-}
+import java.util.HashMap;
+import java.util.HashSet;
 
 class Test1 {
     public static void main(String[] args) {
-        Foo.Bar f = new Foo().new Bar();
-        // Foo.Bar f = new Bar();
-        /* Line 10: Missing statement ? */
-        // Foo.Bar b = f.new Bar();
+
+        HashSet<Character> uChar = new HashSet<>();
+        String strs = "Hello World";
+        // String[] s = strs.split(" ");
+
+        // System.out.println(s[0]);
+
+        for (Character character : strs.toCharArray()) {
+            if (character == ' ') {
+                continue;
+            }
+            uChar.add(character);
+        }
+        System.out.println(uChar);
+        System.out.println(uChar.size());
+
+        // HashMap<Integer, Integer> map = new HashMap<>();
+        // map.put(1, 20);
+        // map.put(4, 10);
+        // map.put(8, 90);
+        // map.put(3, 40);
+        // map.put(6, 50);
+        // System.out.println(map);
+        // // System.out.println(map.containsValue(200));
+        // // System.out.println(map.containsKey(111));
+
+        // // System.out.println(map.remove(2, 30));
+        // // System.out.println(map);
+        // System.out.println(map.size());
+
+        // System.out.println(map.containsValue(20));
+        // System.out.println(map);
+
     }
 }
