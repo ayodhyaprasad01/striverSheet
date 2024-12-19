@@ -1,0 +1,11 @@
+# Check repository status
+git status
+
+# Add untracked file
+git add <File name>
+
+# Restore staged changes
+git restore --staged Restore
+
+# Verify repository root
+git rev-parse --show-toplevel

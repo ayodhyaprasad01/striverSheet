@@ -20,8 +20,12 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        String s1 = "the sky is blue";
-        System.out.println(solution.reverseWords(s1));
+        // Solution solution = new Solution();
+        // String s1 = "the sky is blue";
+        // System.out.println(solution.reverseWords(s1));
+
+        int[][] arr = new int[3][4];
+        System.out.println(arr.length);
+        System.out.println(arr[0].length);
     }
 }
