@@ -13,9 +13,9 @@ public class PreOrdertraversalWithString {
             return;
         }
 
+        sb.append(str[i]);
         preOrderHelpper(str, sb, 2 * i + 1);
         preOrderHelpper(str, sb, 2 * i + 2);
-        sb.append(str[i]);
     }
 
     public static void main(String[] args) {
