@@ -1,70 +1,52 @@
+// Mock VersionControl class to simulate isBadVersion API
 public class BinaryStringBeautiyf {
-    // public int minChanges(String s) {
+    // Example of how you can define the bad version (mock)
+    private int badVersion;
 
-    // StringBuilder sb = new StringBuilder(s);
-    // int count = 1;
-    // int r = 0;
-    // char c1 = s.charAt(0);
-
-    // for (int i = 1; i < s.length(); i++) {
-
-    // if (c1 == s.charAt(i)) {
-    // count++;
-    // if (count % 2 != 0) {
-    // count = 0;
-    // sb.insert(i, s.charAt(i));
-    // r++;
-    // }
-    // }
-    // }
-    // return r;
-
-    // public String camelCase(String str) {
-
-    // return print(str);
-    // }
-
-    public String print(String n) {
-        // String n = "ONEtWOtHREE";
-        String[] strs = n.split("(?=[a-z])");
-        StringBuilder sbs = new StringBuilder();
-
-        for (int i = 0; i < strs.length; i++) {
-            if (i == 0) {
-                // System.out.println(strs[i].toLowerCase());
-                sbs.append(strs[i].toLowerCase()).append('\n');
-            } else {
-                // System.out.println(strs[i].substring(0, 1).toUpperCase() +
-                // strs[i].substring(1).toLowerCase());
-                sbs.append(strs[i].substring(0, 1).toUpperCase() + strs[i].substring(1).toLowerCase()).append('\n');
-            }
-        }
-
-        return sbs.toString().trim();
+    // Constructor to set the bad version
+    public BinaryStringBeautiyf(int badVersion) {
+        this.badVersion = badVersion;
     }
 
+    // API to check if a version is bad
+    public boolean isBadVersion(int version) {
+        return version >= badVersion;
+    }
+}
+
+// Solution class to find the first bad version
+class Solution extends BinaryStringBeautiyf {
+    // Constructor to initialize the bad version in VersionControl
+    public Solution(int badVersion) {
+        super(badVersion);
+    }
+
+    public int firstBadVersion(int n) {
+        int start = 1; // Start from version 1
+        int end = n; // End at version n
+        int firstBad = -1; // To store the first bad version
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            if (isBadVersion(mid)) {
+                firstBad = mid; // Update first bad version
+                end = mid - 1; // Search in the left half
+            } else {
+                start = mid + 1; // Search in the right half
+            }
+        }
+        return firstBad; // Return the first bad version
+    }
+}
+
+// Example usage
+class Main {
     public static void main(String[] args) {
-        // BinaryStringBeautiyf obj = new BinaryStringBeautiyf();
-        // System.out.println(obj.minChanges("1001"));
-        // char c = 's';
+        int n = 5; // Total versions
+        int bad = 4; // First bad version
 
-        // System.out.println(n.toString().toLowerCase());
-        // System.out.println(n.toString().toUpperCase() + '\n');
-        // System.out.println(n);
-
-        // System.out.println(n.substring(0, n.length()));
-        // System.out.println();
-
-        // System.out.println(n.substring(0, n.length() - 1).toUpperCase() +
-        // n.substring(n.length() - 1).toLowerCase());
-        // System.out.println(Character.toUpperCase(c));
-
-        // StringBuilder n = new StringBuilder("ONEtWOtHREE");
-        BinaryStringBeautiyf bb = new BinaryStringBeautiyf();
-        String str = "ONEtWOtHREE";
-        System.out.println(bb.print(str));
-
-        System.out.println(4 % 1);
-
+        Solution solution = new Solution(bad);
+        System.out.println("First Bad Version: " + solution.firstBadVersion(n)); // Output: 4
     }
 }
