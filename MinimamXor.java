@@ -33,6 +33,8 @@ public class MinimamXor {
         // System.out.println(m.minimizeXor(5, 3)); // 3
         // System.out.println(m.minimizeXor(10, 7)); // 11
         System.out.println(10 ^ 4); // 6
+        System.out.println(10 ^ 4); // 6
+        System.out.println(10 ^ 4); // 6
 
     }
 }
