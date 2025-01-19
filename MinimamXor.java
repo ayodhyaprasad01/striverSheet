@@ -34,7 +34,9 @@ public class MinimamXor {
         // System.out.println(m.minimizeXor(10, 7)); // 11
         System.out.println(10 ^ 4); // 6
         System.out.println(10 ^ 4); // 6
-        System.out.println(10 ^ 4); // 6
+        Integer c = 128;
+        Integer d = 128;
+        System.out.println(c == d); // 6
 
     }
 }
