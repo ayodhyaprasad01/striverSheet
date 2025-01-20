@@ -61,7 +61,9 @@ public class TrappingRainWater {
         int[][] heightMap = {
                 { 1, 4, 8, 3 },
                 { 5, 7, 2, 6 },
+                { 9, 1, 2, 5 },
                 { 9, 1, 2, 7 }
+
         };
 
         System.out.println(trapRainWater(heightMap));
