@@ -6,7 +6,6 @@ public class BS {
         int n = nums.length;
         int count = 0;
 
-        // Fix the largest side `c`
         for (int c = n - 1; c >= 2; c--) {
             int a = 0; // Start pointer for the smallest side
             int b = c - 1; // Pointer for the middle side
