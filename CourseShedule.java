@@ -1,40 +1,44 @@
-import java.util.*;
-
 public class CourseShedule {
-    public List<Boolean> checkIfPrerequisite(int numCourses, int[][] prerequisites, int[][] queries) {
-        boolean[][] reach = new boolean[numCourses][numCourses];
-
-        for (int[] prerequisite : prerequisites) {
-            int courseA = prerequisite[0];
-            int courseB = prerequisite[1];
-            reach[courseA][courseB] = true;
-        }
-
-        for (int k = 0; k < numCourses; k++) {
-            for (int i = 0; i < numCourses; i++) {
-                for (int j = 0; j < numCourses; j++) {
-                    reach[i][j] = reach[i][j] || (reach[i][k] && reach[k][j]);
+    public int findMaxFish(int[][] grid) {
+            int m = grid.length;
+            int n = grid[0].length;
+            int maxFish = 0;
+    
+            // Function to perform DFS
+            int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+            
+            // DFS function to collect fish from connected cells
+    int dfs(int[][] grid, int r, int c) {
+                if (r < 0 || c < 0 || r >= m || c >= n || grid[r][c] == 0) {
+                    return 0;
                 }
+                int fish = grid[r][c];
+                grid[r][c] = 0; // Mark cell as visited
+                for (int[] dir : directions) {
+                    fish += dfs(grid, r + dir[0], c + dir[1]);
+                }
+                return fish;
+            }
+
+    // Iterate through all cells in the grid
+    for(
+
+    int r = 0;r<m;r++)
+    {
+        for (int c = 0; c < n; c++) {
+            if (grid[r][c] > 0) { // Start DFS if it's a water cell
+                maxFish = Math.max(maxFish, dfs(grid, r, c));
             }
         }
+    }return maxFish;
+}
+}
 
-        List<Boolean> res = new ArrayList<>();
-        for (int[] query : queries) {
-            int courseU = query[0];
-            int courseV = query[1];
-            res.add(reach[courseU][courseV]);
-        }
+public static void main(String []as){
+    CourseShedule courseShedule = new CourseShedule();
+    int[][] grid = {
+        {1, 0, 0, 0},
+        {0, 0, 0, 0},
 
-        return res;
-    }
-
-    public static void main(String[] args) {
-        CourseShedule courseShedule = new CourseShedule();
-        int numCourses = 2;
-        int[][] prerequisites = { { 1, 0 } };
-        int[][] queries = { { 0, 1 }, { 1, 0 } };
-        List<Boolean> res = courseShedule.checkIfPrerequisite(numCourses, prerequisites, queries);
-        System.out.println(res); // [true, false]
-
-    }
+}
 }
