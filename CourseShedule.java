@@ -16,6 +16,7 @@ public class CourseShedule {
                 grid[r][c] = 0; // Mark cell as visited
                 for (int[] dir : directions) {
                     fish += dfs(grid, r + dir[0], c + dir[1]);
+                    fish += dfs(grid, r + dir[0], c + dir[1]);
                 }
                 return fish;
             }
