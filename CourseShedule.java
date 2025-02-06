@@ -5,6 +5,7 @@ public class CourseShedule {
             int maxFish = 0;
     
             // Function to perform DFS
+            // int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
             int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
             
             // DFS function to collect fish from connected cells
@@ -39,7 +40,9 @@ public static void main(String []as){
     CourseShedule courseShedule = new CourseShedule();
     int[][] grid = {
         {1, 0, 0, 0},
-        {0, 0, 0, 0},
+        {0, 0, 2, 0},
+        {2, 0, 0, 2},
+        {0, 0, 2, 0},
 
 }
 }
