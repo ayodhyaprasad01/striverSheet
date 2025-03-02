@@ -1,20 +1,23 @@
 public class StringAppend {
 
-    public String clearDigits(String s) {
+    public int[][] mergeArrays(int[][] nums1, int[][] nums2) {
 
-        int n = s.length();
-        StringBuilder sb = new StringBuilder();
+        int n1 = nums1.length;
+        int n2 = nums2.length;
 
-        for (int i = 0; i < n; i++) {
-            if (Character.isDigit(s.charAt(i))) {
-                if (sb.length() > 0) {
-                    sb.deleteCharAt(sb.length() - 1);
-                }
-            } else {
-                sb.append(s.charAt(i));
-            }
+        for (int[] arr : nums1) {
+            System.out.println(arr[0]);
         }
-        return sb.toString();
+        return nums2;
+
+    }
+
+    public static void main(String[] args) {
+        StringAppend sa = new StringAppend();
+        int[][] nums1 = { { 144, 2, 3 }, { 45, 5, 6 } };
+        int[][] nums2 = { { 8, 9, 10 }, { 11, 12, 13 } };
+        sa.mergeArrays(nums1, nums2);
+
     }
 
 }
