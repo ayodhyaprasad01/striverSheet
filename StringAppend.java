@@ -14,7 +14,7 @@ public class StringAppend {
 
     public static void main(String[] args) {
         StringAppend sa = new StringAppend();
-        int[][] nums1 = { { 144, 2, 3 }, { 45, 5, 6 } };
+        int[][] nums1 = { { 144, 2, 44 }, { 45, 5, 6 } };
         int[][] nums2 = { { 8, 9, 10 }, { 11, 12, 13 } };
         sa.mergeArrays(nums1, nums2);
 
