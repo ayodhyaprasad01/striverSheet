@@ -1,4 +1,5 @@
 public class MedianOfSortedArrays {
+
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         if (nums1.length > nums2.length) {
             return findMedianSortedArrays(nums2, nums1);
@@ -30,7 +31,7 @@ public class MedianOfSortedArrays {
             }
         }
 
-        throw new IllegalArgumentException("Input arrays are not sorted");
+        throw new IllegalArgumentException("Input arrays are not sorted :");
     }
 
     public static void main(String arg[]) {
