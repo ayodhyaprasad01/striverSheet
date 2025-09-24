@@ -23,7 +23,6 @@ public class Mistyped {
         String word = "aaabbc";
         int result = mistyped.possibleStringCount(word);
         System.out.println("Possible string count for '" + word + "': " + result);
-        // This is a placeholder for the Mistyped class.
-        // The original code snippet does not provide any functionality or methods.
+        
     }
 }
