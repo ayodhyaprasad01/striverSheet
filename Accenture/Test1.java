@@ -19,6 +19,7 @@ public class Test1 {
             }
 
             set.put(arr[i], i);
+            
         }
     }
 }
